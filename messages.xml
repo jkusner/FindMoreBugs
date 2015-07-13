@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="messagecollection.xsd">
+
+        <Plugin>
+                <ShortDescription>FindMoreBugs</ShortDescription>
+                <Details>Adds more findbugs detectors</Details>
+        </Plugin>
+        
+        <Detector class="me.johnkusner.fmb.HardCodedPasswordDetector">
+                <Details>
+                       Finds hard coded passwords in strings.
+                </Details>
+        </Detector>
+        
+        <Detector class="me.johnkusner.fmb.CommandInjectionVulnerabilityDetector">
+        		<Details>
+        			Checks for possible instances of command injection.
+        		</Details>
+        </Detector>
+        
+        <Detector class="me.johnkusner.fmb.PrintStackTraceDetector">
+        		<Details>
+        			Checks for stack trace printing
+        		</Details>
+        </Detector>
+        
+        <Detector class="me.johnkusner.fmb.UnsafeAlgorithmDetector">
+        		<Details>
+        			Checks for instances of unsafe algorithms
+        		</Details>
+        </Detector>
+        
+        <BugPattern type="HARDCODED_PASSWORD">
+                <ShortDescription>A hardcoded password was found in a string.</ShortDescription>
+                <LongDescription>A hardcoded password was found in a string. Don't use hardcoded passwords!</LongDescription>
+                <Details>
+<![CDATA[
+<p>A hardcoded password was found in a string. Don't use hardcoded passwords!</p>
+]]>
+                </Details>
+        </BugPattern>
+        
+        <BugPattern type="POSSIBLE_COMMAND_INJECTION">
+        		<ShortDescription>This code may possibly be vulnerable to command injection.</ShortDescription>
+        		<LongDescription>Be cautious, ensure command injection is not possible in this code snippet.</LongDescription>
+        		<Details>
+        		<![CDATA[
+<p>Command injection might be possible here, please ensure that this is safe code.</p>
+        		]]>
+        		</Details>
+        </BugPattern>
+        
+        <BugPattern type="PRINT_STACK_TRACE">
+        		<ShortDescription>A stack trace was printed. This should never happen in production because it will give people unneeded information about the application.</ShortDescription>
+       			<LongDescription>A stack trace was printed. This should never happen in production because it will give people unneeded information about the application.</LongDescription>
+        		<Details>
+        		<![CDATA[
+<p>A stack trace was printed. This should never happen in production because it will give people unneeded information about the application.</p>
+        		]]>
+        		</Details>
+        </BugPattern>
+        
+        <BugPattern type="UNSAFE_ALGORITHM">
+        		<ShortDescription>An unsafe algorithm was used in the program. Ex: MD5</ShortDescription>
+       			<LongDescription>An unsafe algorithm was used in the program. Ex: MD5</LongDescription>
+        		<Details>
+        		<![CDATA[
+<p>An unsafe algorithm was used in the code. Example: MD5</p>
+        		]]>
+        		</Details>
+        </BugPattern>
+        
+        <BugCode abbrev="HP">HardCodedPassword</BugCode>
+        <BugCode abbrev="PCI">PossibleCommandInjection</BugCode>
+        <BugCode abbrev="PST">PrintStackTrace</BugCode>
+        <BugCode abbrev="UA">UnsafeAlgorithm</BugCode>
+</MessageCollection>

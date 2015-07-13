@@ -1,0 +1,16 @@
+<FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="findbugsplugin.xsd" 
+        pluginid="me.johnkusner.findmorebugs"
+        provider="johnkusner"
+        website="http://github.com/jkusner">
+        
+        <Detector class="me.johnkusner.fmb.HardCodedPasswordDetector" reports="HARDCODED_PASSWORD" />
+        <Detector class="me.johnkusner.fmb.CommandInjectionVulnerabilityDetector" reports="POSSIBLE_COMMAND_INJECTION" />
+        <Detector class="me.johnkusner.fmb.PrintStackTraceDetector" reports="PRINT_STACK_TRACE" />
+        <Detector class="me.johnkusner.fmb.UnsafeAlgorithmDetector" reports="UNSAFE_ALGORITHM" />
+        
+        <BugPattern type="HARDCODED_PASSWORD" abbrev="HP" category="FMB"/>
+        <BugPattern type="POSSIBLE_COMMAND_INJECTION" abbrev="PCI" category="FMB"/>
+        <BugPattern type="PRINT_STACK_TRACE" abbrev="PST" category="FMB"/>
+        <BugPattern type="UNSAFE_ALGORITHM" abbrev="UA" category="FMB"/>
+</FindbugsPlugin>
